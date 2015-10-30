@@ -1,0 +1,284 @@
+chen@macbook🐒 ~ $ python
+Python 2.7.10 (default, Jul 14 2015, 19:46:27)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy
+>>> import matplotlib
+>>> exit()
+chen@macbook🐒 ~ $ cd Google\ Drive/
+chen@macbook🐒 ~/Google Drive $ cd Fall2015/
+chen@macbook🐒 ~/Google Drive/Fall2015 $ ls
+CMPUT174/              CMPUT204/              CMPUT333/              GERM111/
+CMPUT201/              CMPUT250/              CMPUT366/              My Class Schedule.pdf
+chen@macbook🐒 ~/Google Drive/Fall2015 $ cd CMPUT366/
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366 $ ls
+Syllabus.pdf             plan.rtf                 schedule.pdf             textbooks/               written assignments/
+other resources/         programming assignments/ slides/                  windy-graph.pdf
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366 $ cd programming\ assignments/
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments $ ls
+drafts (old)/ p1/           p2-beta/
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments $ cd p1
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ ls
+IntroductoryPythonLab.html  blackjack.py                p1.pdf                      randomPolicy.py
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ python
+Python 2.7.10 (default, Jul 14 2015, 19:46:27)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy
+>>> import matplotlib
+>>> a=numpy.arry([1,2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'arry'
+>>> a=numpy.array([1,2])
+>>> a
+array([1, 2])
+>>> b=numpy.zeros((3,4))
+>>> b
+array([[ 0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  0.]])
+>>> num_states=10
+>>> num_actions=3
+>>> Q=numpy.zeros((num_states,num_actions))
+>>> Q
+array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])
+>>> Q[4,1]=5
+>>> Q
+array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  5.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])
+>>> Q[4,:]
+array([ 0.,  5.,  0.])
+>>> Q[:,1]
+array([ 0.,  0.,  0.,  0.,  5.,  0.,  0.,  0.,  0.,  0.])
+>>> Q[-1]
+array([ 0.,  0.,  0.])
+>>> Q[-1]=2*numpy.ones((3,))
+>>> Q
+array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  5.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 2.,  2.,  2.]])
+>>> Q[-1]=2*numpy.ones((3))
+>>> Q[-1]=5.5*numpy.ones((3))
+>>> Q
+array([[ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  5. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 0. ,  0. ,  0. ],
+       [ 5.5,  5.5,  5.5]])
+>>> import  numpy as np
+>>> np.ones((3,3))
+array([[ 1.,  1.,  1.],
+       [ 1.,  1.,  1.],
+       [ 1.,  1.,  1.]])
+>>> fron numpy import zeros, ones, array
+  File "<stdin>", line 1
+    fron numpy import zeros, ones, array
+             ^
+SyntaxError: invalid syntax
+>>> from numpy import zeros, ones, array
+>>> array([[3,4],[5,6]])
+array([[3, 4],
+       [5, 6]])
+>>> np.random.random((5,3))
+array([[ 0.03415769,  0.48262278,  0.6084873 ],
+       [ 0.93656035,  0.5798162 ,  0.87311724],
+       [ 0.61523049,  0.00483267,  0.39508332],
+       [ 0.45670729,  0.0877093 ,  0.98653297],
+       [ 0.79109673,  0.09218469,  0.72811766]])
+>>> np.random.randint(0,10,(4,3))
+array([[8, 8, 1],
+       [0, 1, 4],
+       [2, 2, 5],
+       [0, 0, 2]])
+>>> np.random.random()
+0.31417193443279456
+>>> np.random.seed(56)
+>>> np.random.normal(0,1,(3,4))
+array([[-1.03764318,  0.59365816,  1.10268062, -0.51217773],
+       [-0.26541986, -1.61700601, -0.27151449,  0.94555425],
+       [-0.62699279, -0.26594728,  0.68729358,  2.04845691]])
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ python
+Python 2.7.10 (default, Jul 14 2015, 19:46:27)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import blackjack
+>>> blackjack.init()
+0
+>>> s=blackjack.init()
+>>> (R,Sp)=blackjack.sample(S,A)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'S' is not defined
+>>> S=blackjack.init()
+>>> (R,Sp)=blackjack.sample(S,A)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'A' is not defined
+>>> (R,Sp)=blackjack.sample(S,0)
+>>> r
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'r' is not defined
+>>> R
+0
+>>> Sp
+19
+>>> blackjack.sample(36,0)
+(1, -1)
+>>> blackjack.sample(5,0)
+(-1, -1)
+>>> blackjack.sample(5,0)
+(-1, -1)
+>>> blackjack.sample(5,0)
+(0, -1)
+>>> Q
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q' is not defined
+>>> Q[-1]=5.5*numpy.ones((3))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'numpy' is not defined
+>>> import numpy
+>>> Q[-1]=5.5*numpy.ones((3))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q' is not defined
+>>> Q=numpy.zeros((num_states,num_actions))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'num_states' is not defined
+>>> num_states=10
+>>> >>> num_actions=3
+  File "<stdin>", line 1
+    >>> num_actions=3
+     ^
+SyntaxError: invalid syntax
+>>> >>> Q=numpy.zeros((num_states,num_actions))
+  File "<stdin>", line 1
+    >>> Q=numpy.zeros((num_states,num_actions))
+     ^
+SyntaxError: invalid syntax
+>>> num_states=10
+>>> num_actions=3
+>>> Q=numpy.zeros((num_states,num_actions))
+>>> Q
+array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])
+>>> Q[1,2]=11
+>>> Q
+array([[  0.,   0.,   0.],
+       [  0.,   0.,  11.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.]])
+>>> Q[1,0]=10
+>>> Q
+array([[  0.,   0.,   0.],
+       [ 10.,   0.,  11.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+
+Screen version 4.00.03 (FAU) 23-Oct-06
+
+Copyright (c) 1993-2002 Juergen Weigert, Michael Schroeder
+Copyright (c) 1987 Oliver Laumann
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either
+version 2, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program (see the file COPYING); if not, write to the Free Software Foundation, Inc., 59 Temple
+Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Send bugreports, fixes, enhancements, t-shirts, money, beer & pizza to screen@uni-erlangen.de
+
+
+                                                                         [Press Space or Return to end.]
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ echo 0
+0
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ echo 1
+1
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ echo 0
+0
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ python
+Python 2.7.10 (default, Jul 14 2015, 19:46:27)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ exit
+exit
+chen@macbook� ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ echo 1
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.],
+       [  0.,   0.,   0.]])
+>>> np.argmax(Q[1])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'np' is not defined
+>>> import numpy as np
+>>> np.argmax(Q[1])
+2
+>>> def pi(s):
+...     if s=1:
+  File "<stdin>", line 2
+    if s=1:
+        ^
+SyntaxError: invalid syntax
+>>> exit()
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ screen
+[screen is terminating]
+chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $
