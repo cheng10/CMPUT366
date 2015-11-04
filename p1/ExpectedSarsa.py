@@ -13,11 +13,6 @@ num_actions=2
 Q=0.00001*np.random.random((num_states,num_actions))
 Q[-1,0]=Q[-1,1]=0
 
-def bad_policy(state):
-	if state%2==0:
-		return 0
-	else:
-		return 1
 def rand_policy(state):
 	global returnSum
 	s=state
@@ -47,6 +42,16 @@ def sarsa_policy(state):
 	else:
 		return 1
 
+def deter_policy(state):
+	global returnSum
+	s=state
+	while s!=-1:
+		r,s_=bj.sample(s,sarsa_policy(s))
+		s=s_
+	returnSum=returnSum + r
+
+#main function
+#policy learning
 for _ in range(numEpisodes):
 	if _%10000==0:
 		print "Episode:",_
@@ -60,8 +65,16 @@ for _ in range(numEpisodes):
 		exp_sarsa(s)
 #		print "rand:",rand,"policy: ExpectedSarsa"
 
-
 bj.printPolicy(sarsa_policy)
-
 print "Average return:",returnSum/numEpisodes
-#bj.printPolicy(rand_policy)
+
+#determinstic policy
+returnSum=0.0
+for _ in range(numEpisodes):
+	if _%10000==0:
+		print "Episode:",_
+		print "Average return:",returnSum/(_+1)
+	s=bj.init()
+	deter_policy(s)
+bj.printPolicy(sarsa_policy)
+print "Average return:",returnSum/numEpisodes
