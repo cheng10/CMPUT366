@@ -1,8 +1,9 @@
 import blackjack as bj
 import numpy as np
 from pylab import *
+import random
 
-numEpisodes = 10000000
+numEpisodes = 100000
 returnSum = 0.0
 emu=0.
 epi=0
@@ -13,6 +14,16 @@ Q=0.00001*np.random.random((num_states,num_actions))
 Q[-1,0]=Q[-1,1]=0
 
 def bp(state):
+    a = random.random()
+    if a > 0.01:
+        if state == 0:
+            return 0
+        else: 
+            return 1
+    else:
+        ran = np.random.randint(0,2)
+        return ran
+def oldbp(state):
 	if state==0:
 		return 0
 	else:
