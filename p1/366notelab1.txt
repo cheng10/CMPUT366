@@ -1,26 +1,3 @@
-chen@macbook🐒 ~ $ python
-Python 2.7.10 (default, Jul 14 2015, 19:46:27)
-[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import numpy
->>> import matplotlib
->>> exit()
-chen@macbook🐒 ~ $ cd Google\ Drive/
-chen@macbook🐒 ~/Google Drive $ cd Fall2015/
-chen@macbook🐒 ~/Google Drive/Fall2015 $ ls
-CMPUT174/              CMPUT204/              CMPUT333/              GERM111/
-CMPUT201/              CMPUT250/              CMPUT366/              My Class Schedule.pdf
-chen@macbook🐒 ~/Google Drive/Fall2015 $ cd CMPUT366/
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366 $ ls
-Syllabus.pdf             plan.rtf                 schedule.pdf             textbooks/               written assignments/
-other resources/         programming assignments/ slides/                  windy-graph.pdf
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366 $ cd programming\ assignments/
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments $ ls
-drafts (old)/ p1/           p2-beta/
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments $ cd p1
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ ls
-IntroductoryPythonLab.html  blackjack.py                p1.pdf                      randomPolicy.py
-chen@macbook🐒 ~/Google Drive/Fall2015/CMPUT366/programming assignments/p1 $ python
 Python 2.7.10 (default, Jul 14 2015, 19:46:27)
 [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
