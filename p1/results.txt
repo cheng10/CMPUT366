@@ -1,0 +1,4 @@
+a) the final policy and its deterministic performance level 
+b) the best setting (values of α, ε μ , ε π , and the number of episodes) that you were able to find in
+part 3, along with the policy (by printPolicy ) and its performance level (by running
+deterministically as described at the end of part 2).
