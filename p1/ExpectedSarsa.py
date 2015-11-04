@@ -1,9 +1,9 @@
 import blackjack as bj
 import numpy as np
+import math
 from pylab import *
-import random
 
-numEpisodes = 1000000
+numEpisodes =int(math.pow(10,6))
 returnSum = 0.0
 emu=0.01
 epi=0.01
@@ -70,6 +70,7 @@ print "Average return:",returnSum/numEpisodes
 
 #determinstic policy
 returnSum=0.0
+numEpisodes=int(math.pow(10,7))
 for _ in range(numEpisodes):
 	if _%10000==0:
 		print "Episode:",_
