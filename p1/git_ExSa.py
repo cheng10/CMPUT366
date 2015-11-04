@@ -59,4 +59,3 @@ for episodeNum in range(numEpisodes):
     if episodeNum%10000 == 0:
         print "Episode: ", episodeNum
         print "Average return: ", returnSum/(episodeNum+1)
-

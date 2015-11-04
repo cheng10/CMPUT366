@@ -2,18 +2,18 @@ import blackjack as bj
 import numpy as np
 from pylab import *
 
-numEpisodes = 10000000
+numEpisodes = 1000000
 returnSum = 0.0
-emu=0.
-epi=0
+emu=0.01
+epi=0.01
 alpha=0.001
 num_states=182
 num_actions=2
 Q=0.00001*np.random.random((num_states,num_actions))
 Q[-1,0]=Q[-1,1]=0
 
-def bp(state):
-	if state==0:
+def bad_policy(state):
+	if state%2==0:
 		return 0
 	else:
 		return 1
@@ -23,6 +23,7 @@ def rand_policy(state):
 	while s!=-1:
 		a=np.random.randint(0,2)
 		r,s_=bj.sample(s,a)
+		Q[s,a]=Q[s,a]+alpha*(r+0.5*Q[s_,0]+0.5*Q[s_,1]-Q[s,a])
 		s=s_
 	returnSum=returnSum + r
 
@@ -39,12 +40,16 @@ def exp_sarsa(state):
 		s=s_
 	returnSum=returnSum + r
 
-#bj.printPolicy(bp)
-#print
+def sarsa_policy(state):
+	if Q[state,0]>Q[state,1]:
+		return 0
+	else:
+		return 1
+
 for _ in range(numEpisodes):
 	if _%10000==0:
 		print "Episode:",_
-		print "Average return:",returnSum/numEpisodes
+		print "Average return:",returnSum/(_+1)
 	s=bj.init()
 	rand=np.random.random()
 	if rand<emu:
@@ -53,6 +58,9 @@ for _ in range(numEpisodes):
 	else:
 		exp_sarsa(s)
 #		print "rand:",rand,"policy: ExpectedSarsa"
+
+
+bj.printPolicy(sarsa_policy)
 
 print "Average return:",returnSum/numEpisodes
 #bj.printPolicy(rand_policy)
