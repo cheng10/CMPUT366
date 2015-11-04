@@ -1,8 +1,9 @@
 import blackjack as bj
 import numpy as np
 from pylab import *
+import random
 
-numEpisodes = 1000000
+numEpisodes = 100000
 returnSum = 0.0
 emu=0.01
 epi=0.01
