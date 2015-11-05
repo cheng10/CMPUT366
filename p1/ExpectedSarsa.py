@@ -32,7 +32,15 @@ def exp_sarsa(state):
 		else:
 			a=1
 		r,s_=bj.sample(s,a)
-		Q[s,a]=Q[s,a]+alpha*(r+0.5*Q[s_,0]+0.5*Q[s_,1]-Q[s,a])
+# a_ is the actin choosen by target epsilon greedy policy
+		rand=np.random.random()
+		if rand<epi:
+#		rand
+			a_=np.random.randint(0,2)
+		else:
+#		greedy
+			a_=np.argmax(Q[s_])
+		Q[s,a]=Q[s,a]+alpha*(r+Q[s_,a_]-Q[s,a])
 		s=s_
 	returnSum=returnSum + r
 
