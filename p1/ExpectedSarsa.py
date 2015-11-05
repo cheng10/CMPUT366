@@ -87,3 +87,4 @@ for _ in range(numEpisodes):
 	deter_policy(s)
 bj.printPolicy(sarsa_policy)
 print "Average return:",returnSum/numEpisodes
+print "alpha, emu, epi, episodes:",alpha,emu,epi,numEpisodes
