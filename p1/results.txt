@@ -1,3 +1,9 @@
+Group Members:
+NAME		CCID		SID
+CHEN, Cheng	cheng10 	1443652
+LU, Liangrui	liangrui 	
+
+
 a)the final policy and its deterministic performance level 
 
  Usable Ace:
