@@ -1,9 +1,9 @@
 import blackjack as bj
 import numpy as np
+import math
 from pylab import *
-import random
 
-numEpisodes = 1000000
+numEpisodes =int(math.pow(10,6))
 returnSum = 0.0
 emu=0.01
 epi=0.01
@@ -32,7 +32,15 @@ def exp_sarsa(state):
 		else:
 			a=1
 		r,s_=bj.sample(s,a)
-		Q[s,a]=Q[s,a]+alpha*(r+0.5*Q[s_,0]+0.5*Q[s_,1]-Q[s,a])
+# a_ is the actin choosen by target epsilon greedy policy
+		rand=np.random.random()
+		if rand<epi:
+#		rand
+			a_=np.random.randint(0,2)
+		else:
+#		greedy
+			a_=np.argmax(Q[s_])
+		Q[s,a]=Q[s,a]+alpha*(r+Q[s_,a_]-Q[s,a])
 		s=s_
 	returnSum=returnSum + r
 
@@ -70,6 +78,7 @@ print "Average return:",returnSum/numEpisodes
 
 #determinstic policy
 returnSum=0.0
+numEpisodes=int(math.pow(10,7))
 for _ in range(numEpisodes):
 	if _%10000==0:
 		print "Episode:",_
@@ -78,3 +87,4 @@ for _ in range(numEpisodes):
 	deter_policy(s)
 bj.printPolicy(sarsa_policy)
 print "Average return:",returnSum/numEpisodes
+print "alpha, emu, epi, episodes:",alpha,emu,epi,numEpisodes
