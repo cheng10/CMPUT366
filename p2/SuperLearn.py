@@ -22,7 +22,7 @@ def learn(x,y,target):
 	# write your gradient descent learning algorithm here (3 lines or so)
 	value = f(x,y)
 	for i in tileIndices:
-	weight[i] = weight[i] + alpha*(target - value)
+		weight[i] = weight[i] + alpha*(target - value)
 
 def test1():
    for x,y,target in \
@@ -42,28 +42,28 @@ def targetFunction(x,y):
 
 def train(numSteps):
 	for i in range(numSteps):
-	x = random() * 6.0
-	y = random() * 6.0
-	target = targetFunction(x,y)
-	learn(x,y,target)
+		x = random() * 6.0
+		y = random() * 6.0
+		target = targetFunction(x,y)
+		learn(x,y,target)
 	
 def writeF(filename):
 	fout = open(filename, 'w')
 	steps = 50
 	for i in range(steps):
-	for j in range(steps):
-		target = f(i * 6.0/steps, j * 6.0/steps)
-		fout.write(repr(target) + ' ')
-	fout.write('\n')
+		for j in range(steps):
+			target = f(i * 6.0/steps, j * 6.0/steps)
+			fout.write(repr(target) + ' ')
+		fout.write('\n')
 	fout.close()
 	
 def MSE(sampleSize):
 	totalSE = 0.0
 	for i in range(sampleSize):
-	x = random() * 6.0
-	y = random() * 6.0
-	error = targetFunction(x,y) - f(x,y)
-	totalSE = totalSE + error * error
+		x = random() * 6.0
+		y = random() * 6.0
+		error = targetFunction(x,y) - f(x,y)
+		totalSE = totalSE + error * error
 	print 'The estimated MSE: ', (totalSE / sampleSize)
 	
 def test2():
@@ -71,8 +71,8 @@ def test2():
 	writeF('f20')
 	MSE(10000)
 	for i in range(10):
-	train(1000)
-	MSE(10000)
+		train(1000)
+		MSE(10000)
 	writeF('f10000')
 
 test1()
