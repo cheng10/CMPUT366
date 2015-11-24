@@ -1,0 +1,17 @@
+1. Assuming that you number the tiles in the natural way, the tiles in the first tiling will run from 0 to 120, and the tiles in the second tiling will run from 121 to 241. Why?
+We know each tiling is an 11*11 grid, thus each tiling has 121 tiles. And the we count the first tile as 0, hence, the tiles in the first tiling will run from 0 to 120. For the second tiling, it continues from the last tile of first tiling which is 120. Hence the first tile of the second tiling is 121, and its last tile will be 241, which is 120+121. 
+
+2. For example, the point from the first example in the training set above, x = 0.1 and y = 0.1, or (0.1,0.1), will be in the first tile of the first seven tilings, that is, in tiles 0, 121, 242, 363, 484, 605, 726. Why?
+From the context, we know that each tile is 0.6 width and 0.6 length. Obviously, point (0.1, 0.1) is in the first tile. Even all the tilings have been offset by -0.6/8 in x and y axes, first tile of first tiling through 7th tiling still capture point (0.1, 0.1). The right and upper boundary of 7th tiling is 0.6-6*(0.6/8)=0.15. Clearly, (0.1, 0.1) is in the first tile of the 7th tiling. Since the first tile of the 7th tiling captures (0.1, 0.1), it also works from first tiling to 6th tiling. 
+
+3. In the eighth tiling this point will be in the 13th tile. Why?
+For the eighth tiling, the upper and right doundaries has been offset 7 times, which is 0.6-7(0.6/8)=0.075<0.1. Obviouly, (0.1, 0.1) is in the upper-right tile in the 8th tiling, which is the second tile of the second row. We know it is the 13th tile(11+2). 
+
+4. Which is tile 859. Why?
+We know that the first tile of the 8th tiling is 7*121=847. Obviously, the 13th tile of 8th tiling is 847+12=859.
+
+5. The largest possible tile index is 967. Why?
+We have 8 tilings in total and each tiling has 121 tiles. Also, the we count tiles from 0. So, the last tile of the 8th tiling has the biggest index, which is 121*8-1=967.
+
+6. Finally, the second and fourth examples should produce very similar sets of indices they should have many tiles in common. Why?
+The second examples has the input of (4, 2). And the fourth example has the input of (4, 2.1). They have exactly idential x coordinate and their y coordinates are pretty close(0.1) with respect to the tile size(0.6*0.6). So, in most cases, they will be in the same tiles.
