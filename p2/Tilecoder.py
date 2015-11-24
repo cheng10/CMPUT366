@@ -2,11 +2,10 @@ numTilings = 8
 	
 def tilecode(x,y,tileIndices):
 	# write your tilecoder here (5 lines or so)
-	i = 0
 	for i in range (0,numTilings):
-		a = (x+i*0.6/8)*10/6
-		b =(y+i*0.6/8)*10/6
-		tileIndices[i] = int(a)+11*int(b) + i * 121
+		x_axis=int((x+i*0.6/numTilings)*10/6)
+		y_axis=int((y+i*0.6/numTilings)*10/6)
+		tileIndices[i]=x_axis+11*y_axis+i*121
 		
 def printTileCoderIndices(x,y):
 	tileIndices = [-1]*numTilings
