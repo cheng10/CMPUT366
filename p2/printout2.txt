@@ -1,0 +1,15 @@
+Example ( 0.1 , 0.1 , 3.0 ):     f before learning:  0.0     f after learning :  0.3
+Example ( 4.0 , 2.0 , -1.0 ):     f before learning:  0.0     f after learning :  -0.1
+Example ( 5.99 , 5.99 , 2.0 ):     f before learning:  0.0     f after learning :  0.2
+Example ( 4.0 , 2.1 , -1.0 ):     f before learning:  -0.075     f after learning :  -0.1675
+The estimated MSE:  0.25216899123
+The estimated MSE:  0.0601720754011
+The estimated MSE:  0.0205178058581
+The estimated MSE:  0.0147126156489
+The estimated MSE:  0.0128509471863
+The estimated MSE:  0.0119995625344
+The estimated MSE:  0.011783597812
+The estimated MSE:  0.0116549149406
+The estimated MSE:  0.0110957939979
+The estimated MSE:  0.0112353211091
+The estimated MSE:  0.0112540699385

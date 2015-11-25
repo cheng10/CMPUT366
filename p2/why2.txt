@@ -1,0 +1,5 @@
+1. The before value of the fourth point should be nonzero. Why?
+We know that the 4th example (4, 2) is so similiar to the second example (4, 2.1). They stay in the same tile for 6 tilings among all 8 tilings. We learnt those common tiles when we were learning the second point. The weights would not be the initial zero value when we start to learn the fourth point.   
+
+2. You should see the MSE coming down smoothly from about 0.25 to almost 0.01 and staying there. Why does it not decrease further towards zero?
+We have introduced noise in the tartget funtion as N(0, 0.1). Hence, we at least have this noise which causes MSE>=0.01. The learning process reduces the original MSE, but cannot reduce artificial noise N(0, 0.1). 
