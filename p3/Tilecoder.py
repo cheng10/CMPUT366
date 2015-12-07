@@ -7,13 +7,3 @@ def tilecode(p,v,tileIndices):
 		p_axis=int(((p+1.2)+i*0.2125/numTilings)*8/1.7)
 		v_axis=int(((v+0.07)+i*0.0175/numTilings)*8/0.14)
 		tileIndices[i]=p_axis+9*v_axis+i*numTiles
-		
-def printTileCoderIndices(x,y):
-	tileIndices = [-1]*numTilings
-	tilecode(x,y,tileIndices)
-	print 'Tile indices for input (',p,',',v,') are : ', tileIndices
-
-#printTileCoderIndices(0.1,0.1)
-#printTileCoderIndices(4.0,2.0)
-#printTileCoderIndices(5.99,5.99)
-#printTileCoderIndices(4.0,2.1)

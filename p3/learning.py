@@ -11,7 +11,7 @@ alpha = 0.5/numTilings
 gamma = 1
 lmbda = 0.9
 Epi = Emu = epsilon = 0
-n = numTiles*numTiles*numActions
+n = numTilings*numTiles*numActions
 F = [-1]*np.ones(numTilings)
 steps=np.zeros(numEpisodes)
 returns=np.zeros(numEpisodes)
@@ -63,11 +63,18 @@ for run in xrange(numRuns):
 	runSum += returnSum
 print "Overall performance: Average sum of return per run:", runSum/numRuns
 
+def Qs(F):
+	Q=np.zeros(numActions)
+	for a in range(3):
+		for _ in F:
+			Q[a]=Q[a]+theta[_+a*324]
+	return Q
+
 #Additional code here to write average performance data to files for plotting...
 #You will first need to add an array in which to collect the data
 def writeD():
-	f_mean=open('average.dat', 'w')
-	f_step=open('steps.dat', 'w')
+	f_mean=open('avgret.dat', 'w')
+	f_step=open('avgsteps.dat', 'w')
 	for _ in range(numEpisodes):
 		f_mean.write(repr(_) + ' ' + repr(returns[_]/numRuns))
 		f_step.write(repr(_) + ' ' + repr(steps[_]/numRuns))
@@ -88,4 +95,5 @@ def writeF():
 		fout.write('\n')
 	fout.close()
 
-
+writeF()
+writeD()
